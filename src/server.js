@@ -48,7 +48,7 @@ app.get('*', (req, res) => {
 });
 
 // start the server
-const port = process.env.PORT || 56410;
+const port = process.env.PORT || 8080;
 const env = process.env.NODE_ENV || 'production';
 server.listen(port, err => {
   if (err) {
