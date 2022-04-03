@@ -1,4 +1,3 @@
-import path from 'path';
 import { Server } from 'http';
 import Express from 'express';
 import React from 'react';
@@ -9,7 +8,7 @@ import { match, RouterContext } from 'react-router';
 // initialize the server and configure support for ejs templates
 const app = new Express();
 const server = new Server(app);
-
+var path = require('path');
 
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, 'dist')));
