@@ -5,12 +5,13 @@ import Home from './Home';
 import Contact from './Contact';
 import ProductsList from './ProductList';
 import ProductPage from './ProductPage';
+import App from './App';
 export const routes = (
   <Routes>
-    <Route exact path="/"/>
-    <Route path="/Contact" element={<Contact/>}/>
-    <Route path="/About" element={<About/>}/>
-    <Route name="ProductPage" path="/ProductPage" element={<ProductPage/>} />
+   
+    <Route  path="/Contact" element={<Contact/>}/>
+    <Route  path="/About" element={<About/>}/>
+    <Route  name="ProductPage" path="/ProductPage" element={<ProductPage/>} />
   </Routes>
   
 );
