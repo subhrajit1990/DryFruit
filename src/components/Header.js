@@ -16,7 +16,7 @@ export default class Header extends React.Component{
 										<div className="main-menu-wrap">
 											<div className="site-logo">
 												<a href="/">
-													<img style={{width:"156px",height:"26px"}}src="" alt="" />
+													<img style={{width:"156px",height:"26px"}} src="" alt="" />
 												</a>
 											</div>
 											<nav className="main-menu" style={{display: "block"}}>
@@ -24,6 +24,8 @@ export default class Header extends React.Component{
 	                            					<li><NavLink to="/">Home</NavLink></li>
 	                            					<li><NavLink to="/Contact">Contact</NavLink></li>
 	                            					<li><NavLink to="/About">About Us</NavLink></li>
+	                            					<li><NavLink to="/HealthTips">Health Tips</NavLink></li>
+	                            					<li><NavLink to="/News">News</NavLink></li>
 	                            					<li>
 														<div className="header-icons">
 															<NavLink  to="/Cart"><i className="fas fa-shopping-cart"></i></NavLink>
