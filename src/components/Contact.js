@@ -5,7 +5,7 @@ export default class Contact extends React.Component{
 		console.log("Contact us page");
 		return(
 			<>
-	<div className="breadcrumb-section breadcrumb-bg">
+	<div id="dryfruit-contactus" className="breadcrumb-section breadcrumb-bg">
 		<div className="container">
 			<div className="row">
 				<div className="col-lg-8 offset-lg-2 text-center">
@@ -24,7 +24,7 @@ export default class Contact extends React.Component{
 				<div className="col-lg-8 mb-5 mb-lg-0">
 					<div className="form-title">
 						<h2>Have you any question?</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo alias quaerat aliquid. Corporis ipsum minus voluptate? Dolore, esse natus!</p>
+						<p>Lorem ipsum  Lorem ipsum Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum !</p>
 					</div>
 				 	<div id="form_status"></div>
 					<div className="contact-form">
@@ -69,7 +69,7 @@ export default class Contact extends React.Component{
 				<div className="col-lg-3 col-md-6">
 					<div className="footer-box about-widget">
 						<h2 className="widget-title">About us</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+						<p> Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum </p>
 					</div>
 				</div>
 				<div className="col-lg-3 col-md-6">

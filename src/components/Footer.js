@@ -27,16 +27,7 @@ export default class Footer extends React.Component{
 							<div className="col-lg-3 col-md-6">
 								<div className="footer-box pages">
 									<h2 className="widget-title">Pages</h2>
-									<HashRouter>
-										<nav>
-											<ul className="sub-menu">
-	                            				<li><NavLink to="/">Food</NavLink></li>
-	                            				<li><NavLink to="/Home">Home</NavLink></li>
-	                            				<li><NavLink to="/About">About Us</NavLink></li>
-	                            				<li><NavLink to="/Contact">Contact</NavLink></li>
-	                       					</ul>
-										</nav>
-									</HashRouter>
+									
 								</div>
 							</div>
 							<div className="col-lg-3 col-md-6">

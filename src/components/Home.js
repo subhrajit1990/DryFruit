@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer';
 import {Route,HashRouter,NavLink,BrowserRouter} from 'react-router-dom';
 
 export default class Home extends React.Component{
@@ -14,12 +15,12 @@ export default class Home extends React.Component{
 									<p className="subtitle">Fresh &amp; Healthy</p>
 									<h1>Delicious Seasonal Dry Fruits</h1>
 									<div className="hero-btns">
-										<HashRouter>
+										
 											<nav>
 												<NavLink  className="boxed-btn" to="/ProductList">Dry Fruits Collection</NavLink>
 												<NavLink  className="bordered-btn" to="/Contact">Contact Us</NavLink>
 											</nav>
-										</HashRouter>
+										
 									</div>
 								</div>
 							</div>
@@ -28,15 +29,15 @@ export default class Home extends React.Component{
 				</div>
 			</div>
 			<div className="product-section mt-150 mb-150">
-		<div className="container">
-			<div className="row">
-				<div className="col-lg-8 offset-lg-2 text-center">
-					<div className="section-title">	
-						<h3><span className="orange-text">Our</span> Products</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+				<div className="container">
+					<div className="row">
+						<div className="col-lg-8 offset-lg-2 text-center">
+							<div className="section-title">	
+								<h3><span className="orange-text">Our</span> Products</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
 
 			<div className="row">
 				<div className="col-lg-4 col-md-6 text-center">
@@ -72,6 +73,7 @@ export default class Home extends React.Component{
 			</div>
 		</div>
 	</div>
+	<Footer />
 	</>
 		);
 	}
