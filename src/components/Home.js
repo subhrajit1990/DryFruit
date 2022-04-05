@@ -5,7 +5,7 @@ import { Route, HashRouter, NavLink, BrowserRouter } from 'react-router-dom';
 export default class Home extends React.Component {
     render() {
         return (
-            <React.Fragment>
+            <>
 				<div className="hero-area hero-bg">
 					<div className="container">
 						<div className="row">
@@ -72,7 +72,7 @@ export default class Home extends React.Component {
 			</div>
 		</div>
 		<Footer />
-	<React.Fragment/>
+	</>
 		);
 	}
 }
