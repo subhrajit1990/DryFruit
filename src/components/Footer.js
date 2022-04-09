@@ -1,7 +1,35 @@
 import React from 'react';
 import {Route,HashRouter,NavLink,BrowserRouter} from 'react-router-dom';
+import CommonValidationEngine from './CommonValidationEngine';
+
 
 export default class Footer extends React.Component{
+	constructor(props){
+		super();
+		this.emailSubscribeSubmission = this.emailSubscribeSubmission.bind(this);
+	}
+	emailSubscribeSubmission(e){
+		debugger;
+		let email=document.getElementById("emailSubscribe").value;
+		let form = document.getElementById("dryfruit-emailSubscribe").getElementsByTagName("input"),
+		form_validator_check = {
+            email: {
+                verify: ["email"],
+                message: ["Please enter the email"]
+            }
+        };
+		let validationOps = new CommonValidationEngine(form,form_validator_check);
+        if(validationOps.commonValidationFields()){
+        	const postData = {"emailSubscribeRequest":{
+				"email": email
+			}};
+			let finalRes = APIServerCall(postData,'POST','/Misc/api/emailSubscribe');
+			console.log("Final results :: "+JSON.stringify(finalRes))
+        }else{
+        	alert("Error");
+        }
+		e.preventDefault();
+	}
 	render(){
 		return(
 			<footer>
@@ -43,9 +71,9 @@ export default class Footer extends React.Component{
 								<div className="footer-box subscribe">
 									<h2 className="widget-title">Subscribe</h2>
 									<p>Subscribe to our mailing list to get the latest updates.</p>
-									<form action="index.html">
-										<input type="email" placeholder="Email" />
-										<button type="submit"><i className="fas fa-paper-plane"></i></button>
+									<form id="dryfruit-emailSubscribe">
+										<input id="emailSubscribe" name="email" type="email" placeholder="Email" />
+										<button type="submit" onClick={this.emailSubscribeSubmission}><i className="fas fa-paper-plane"></i></button>
 									</form>
 								</div>
 							</div>

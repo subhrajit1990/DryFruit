@@ -1,6 +1,7 @@
 import React from 'react';
 import {APIServerCall} from './CommonUtils';
-import CommonValidationEngine from './CommonValidationEngine';
+import CommonValidationEngine from './CommonValidationEngine'; 
+import Footer from './Footer';
 
 export default class Contact extends React.Component {
 	constructor(props){
@@ -108,39 +109,7 @@ export default class Contact extends React.Component {
 						</div>
 					</div>
 				</div>
-
-				<div className="footer-area">
-					<div className="container">
-						<div className="row">
-							<div className="col-lg-3 col-md-6">
-								<div className="footer-box about-widget">
-									<h2 className="widget-title">About us</h2>
-									<p> Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  </p>
-								</div>
-							</div>
-							<div className="col-lg-3 col-md-6">
-								<div className="footer-box get-in-touch">
-									<h2 className="widget-title">Get in Touch</h2>
-									<ul>
-										<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-										<li>support@xxx.com</li>
-										<li>+91 740*******</li>
-									</ul>
-								</div>
-							</div>
-							<div className="col-lg-3 col-md-6">
-								<div className="footer-box subscribe">
-									<h2 className="widget-title">Subscribe</h2>
-									<p>Subscribe to our mailing list to get the latest updates.</p>
-									<form action="/">
-										<input type="email" placeholder="Email" />
-										<button type="submit"><i className="fas fa-paper-plane"></i></button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<Footer/>
 			</React.Fragment>
 		);
 	}
