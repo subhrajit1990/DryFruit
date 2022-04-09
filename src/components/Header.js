@@ -1,12 +1,12 @@
 import React from 'react';
 import Main from './Main';
-import {Route,HashRouter,NavLink,BrowserRouter as  Router} from 'react-router-dom';
+import { Route, HashRouter, NavLink, BrowserRouter as Router } from 'react-router-dom';
 
 
-export default class Header extends React.Component{
-	render(){
-		return (
-			<Router>
+export default class Header extends React.Component {
+    render() {
+        return (
+            <Router>
 				<header>  
 					<div id="sticker-sticky-wrapper" className="sticky-wrapper" style={{height: "85px"}}>
 						<div className="top-header-area" id="sticker">
@@ -44,6 +44,6 @@ export default class Header extends React.Component{
 			</header>
 			<Main/>
 		</Router>
-		);
-	}
+        );
+    }
 }

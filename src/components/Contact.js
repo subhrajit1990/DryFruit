@@ -1,6 +1,55 @@
 import React from 'react';
+import {APIServerCall} from './CommonUtils';
+import CommonValidationEngine from './CommonValidationEngine';
 
 export default class Contact extends React.Component {
+	constructor(props){
+		super(props);
+		this.contactSubmission = this.contactSubmission.bind(this);
+	}
+	contactSubmission(e){
+		let name = document.getElementById("name").value,
+			email=document.getElementById("email").value,
+			phoneNumber = document.getElementById("phone").value,
+			subject = document.getElementById("subject").value,
+			message = document.getElementById("message").value;
+
+		let form = document.getElementById("dryfruit-contact").getElementsByTagName("input"),
+		form_validator_check = {
+            name: {
+               	verify: ["nullCheck"],
+                message: ["Please enter the name"]
+            },
+            email: {
+                verify: ["email"],
+                message: ["Please enter the email"]
+            },
+            phoneNumber: {
+                verify: ["number"],
+                message: ["Please enter the phone number"]
+            },
+            message: {
+               	verify: ["nullCheck"],
+                message: ["Please enter the message"]
+            },
+        };
+		let validationOps = new CommonValidationEngine(form,form_validator_check);
+        if(validationOps.commonValidationFields()){
+        	const postData = {"contactMeRequest":{
+				"name": name,
+				"email": email,
+				"phoneNumber":phoneNumber,
+				"message": message,
+				"subject": subject
+			}};
+			let finalRes = APIServerCall(postData,'POST','/Misc/api/contactMe');
+			console.log("Final results :: "+JSON.stringify(finalRes))
+        }else{
+        	alert("Error");
+        }
+		e.preventDefault();
+	}
+
     render() {
         return (
             <React.Fragment>
@@ -16,7 +65,6 @@ export default class Contact extends React.Component {
 						</div>
 					</div>
 				</div>
-
 				<div className="contact-from-section mt-150 mb-150">
 					<div className="container">
 						<div className="row">
@@ -27,7 +75,7 @@ export default class Contact extends React.Component {
 								</div>
 							 	<div id="form_status"></div>
 								<div className="contact-form">
-									<form type="POST" id="dryfruit-contact" >
+									<form  id="dryfruit-contact" >
 										<p>
 											<input type="text" placeholder="Name" name="name" id="name" />
 											<input type="email" placeholder="Email" name="email" id="email" />
@@ -37,8 +85,7 @@ export default class Contact extends React.Component {
 											<input type="text" placeholder="Subject" name="subject" id="subject" />
 										</p>
 										<p><textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea></p>
-										<input type="hidden" name="token" value="FsWga4&@f6aw" />
-										<p><input type="submit" value="Submit" /></p>
+										<p><button className="submit" type="submit" onClick={this.contactSubmission} >Submit</button></p>
 									</form>
 								</div>
 							</div>
