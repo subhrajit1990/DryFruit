@@ -38,7 +38,7 @@ export default class Contact extends React.Component {
         	const postData = {"contactMeRequest":{
 				"name": name,
 				"email": email,
-				"phoneNumber":phoneNumber,
+				"phone":phoneNumber,
 				"message": message,
 				"subject": subject
 			}};
