@@ -24,7 +24,7 @@ export default class Contact extends React.Component {
                 verify: ["email"],
                 message: ["Please enter the email"]
             },
-            phoneNumber: {
+            phone: {
                 verify: ["number"],
                 message: ["Please enter the phone number"]
             },
@@ -38,7 +38,7 @@ export default class Contact extends React.Component {
         	const postData = {"contactMeRequest":{
 				"name": name,
 				"email": email,
-				"phone":phoneNumber,
+				"phoneNumber":phoneNumber,
 				"message": message,
 				"subject": subject
 			}};
