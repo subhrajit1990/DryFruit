@@ -5,6 +5,7 @@ import Home from './Home';
 import Contact from './Contact';
 import ProductsList from './ProductList';
 import ProductPage from './ProductPage';
+import ProductList from './ProductList';
 import App from './App';
 export const routes = (
     <Routes>
@@ -12,6 +13,7 @@ export const routes = (
 	    <Route  path="/Contact" element={<Contact/>}/>
 	    <Route  path="/About" element={<About/>}/>
 	    <Route  name="ProductPage" path="/ProductPage" element={<ProductPage/>} />
+	    <Route  name="ProductList" path="/ProductList" element={<ProductList/>} />
   	</Routes>
 
 );

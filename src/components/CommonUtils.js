@@ -35,3 +35,30 @@ export async function  APIServerCall (...args)  {
 	console.log("Final results 2 :: "+JSON.stringify(data));
 	return null;		
 }
+
+
+function callBackFunction(pRes) {
+	
+  if(pRes.status >= 200 &&  pRes.status < 300)
+	 return pRes;
+  
+  const error = new Error(pRes.statusText);
+  error.pRes = pRes;
+  throw error;
+}
+
+export  function APIServerCallWithoutAsync(...args) {
+  	const extraParameters = {
+  		"method":args[1],
+    	headers: {
+	    	'Content-Type': 'application/json',
+	     	'Accept': 'application/json',
+	     	'channel': 'MB',
+			'masterTxnRefNo': refNoGenerator() ,
+			'Authorization':'Basic YWRtaW46cGFzc3dvcmQ=',
+    	}
+  	};
+	return fetch('https://fakestoreapi.com'+args[2])
+    .then(res => callBackFunction(res))
+    .catch(error => console.log(error))      
+}
