@@ -1,9 +1,9 @@
 import React from 'react';
-import {Route,HashRouter,NavLink,Link} from 'react-router-dom';
+import {Route,HashRouter,NavLink,Link,BrowserRouter as Router,useNavigate} from 'react-router-dom';
 import {APIServerCallWithoutAsync} from './CommonUtils';
 import {NotFoundPage, NoDataFoundPage}  from './NotFoundPage';
 import Footer from './Footer';
-
+import ProductPageInterceptor from './ProductPageInterceptor';
 
 export default class ProductList extends React.Component{
 	constructor(props){
@@ -48,60 +48,56 @@ export default class ProductList extends React.Component{
 	    }else{
 	       productListSection = (this.state.productList).map((products, i) => {
 
-	        let productDetails = {
-	            "PName": products["title"],
-	            "PImage": products["image"],
-	            "PBuyBtn": products["BUY"],
-	            "PPrice": products["price"],
-	            "PCategory": products["category"],
-	            "pDes": products["description"]
-	        };
-	        return(
-
-	        	<div className="row product-lists" style={{position: "relative", height: "700px"}} key={i}>
-					<div className="col-lg-4 col-md-6 text-center strawberry" style={{position: "absolute", left: "0px", top: "0px"}}>
-						<div className="single-product-item">
-							<div className="product-image">
-								<a href="single-product.html">
-									<img src={products["image"]} alt="pListImg" />
-								</a>
+		        let productDetails = {
+		            "PName": products["title"],
+		            "PImage": products["image"],
+		            "PBuyBtn": products["BUY"],
+		            "PPrice": products["price"],
+		            "PCategory": products["category"],
+		            "pDes": products["description"]
+		        };
+		        return(
+		        	<div className="row product-lists" style={{position: "relative", height: "700px"}} key={i}>
+						<div className="col-lg-4 col-md-6 text-center strawberry" style={{position: "absolute", left: "0px", top: "0px"}}>
+							<div className="single-product-item">
+								<div className="product-image">
+									<a href="/">
+										<img src={products["image"]} alt="pListImg" />
+									</a>
+								</div>
+								<h3>{products["title"]}</h3>
+								<p className="product-price"><span>Per Kg</span> {products["price"]} </p>
+								<Link key={i} to= "/ProductPageInterceptor" state= {{"productdetailsparams":productDetails} } >Read More ...</Link>	
 							</div>
-							<h3>{products["title"]}</h3>
-							<p className="product-price"><span>Per Kg</span> {products["price"]} </p>
-							{/*<a href="/" className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>*/}
-							<nav>
-								<Link key={i} to={{ pathname: "/ProductPage",aboutProps:{productDetailsParams:productDetails}  }}>Read More ...</Link>
-							</nav>
 						</div>
 					</div>
-				</div>
-        	);
-      	});
-		if (this.el) {
-        	this.el.style.display = "none";  // hiding the spinner element
-      	}
-    }
- return (
- 	<>
-	 	<div className="breadcrumb-section breadcrumb-bg">
-			<div className="container">
-				<div className="row">
-					<div className="col-lg-8 offset-lg-2 text-center">
-						<div className="breadcrumb-text">
-							<p>Fresh &amp; Healthy</p>
-							<h1>Shop</h1>
+	        	);
+      		});
+			if (this.el) {
+	        	this.el.style.display = "none";  // hiding the spinner element
+	      	}
+    	}
+	 return (
+	 	<>
+		 	<div className="breadcrumb-section breadcrumb-bg">
+				<div className="container">
+					<div className="row">
+						<div className="col-lg-8 offset-lg-2 text-center">
+							<div className="breadcrumb-text">
+								<p>Fresh &amp; Healthy</p>
+								<h1>Shop</h1>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	     <div className="product-section mt-150 mb-150">
-			<div className="container">
-	          {productListSection}
-	        </div>
-	    </div> 
-	    <Footer />
-      </>
-    );
-  }
+		    <div className="product-section mt-150 mb-150">
+				<div className="container">
+				 	{productListSection}
+		        </div>
+		    </div> 
+		    <Footer />
+	      </>
+	    );
+ 	}
 }
