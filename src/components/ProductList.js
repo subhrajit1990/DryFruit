@@ -4,6 +4,7 @@ import {APIServerCallWithoutAsync} from './CommonUtils';
 import {NotFoundPage, NoDataFoundPage}  from './NotFoundPage';
 import Footer from './Footer';
 import ProductPageInterceptor from './ProductPageInterceptor';
+import {Breadcrumb} from './Breadcrumb';
 
 export default class ProductList extends React.Component{
 	constructor(props){
@@ -79,18 +80,7 @@ export default class ProductList extends React.Component{
     	}
 	 return (
 	 	<>
-		 	<div className="breadcrumb-section breadcrumb-bg">
-				<div className="container">
-					<div className="row">
-						<div className="col-lg-8 offset-lg-2 text-center">
-							<div className="breadcrumb-text">
-								<p>Fresh &amp; Healthy</p>
-								<h1>Shop</h1>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		 	<Breadcrumb/>
 		    <div className="product-section mt-150 mb-150">
 				<div className="container">
 				 	{productListSection}
