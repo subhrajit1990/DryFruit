@@ -58,10 +58,11 @@ export default class Footer extends React.Component{
 									
 										<nav>
 											<ul className="sub-menu">
-	                            				<li><NavLink to="/">Food</NavLink></li>
-	                            				<li><NavLink to="/Home">Home</NavLink></li>
-	                            				<li><NavLink to="/About">About Us</NavLink></li>
-	                            				<li><NavLink to="/Contact">Contact</NavLink></li>
+	                            				<li><NavLink to="/">Home</NavLink></li>
+			                            		<li><NavLink to="/Contact">Contact</NavLink></li>
+			                            		<li><NavLink to="/About">About Us</NavLink></li>
+			                            		<li><NavLink to="/HealthTips">Health Tips</NavLink></li>
+			                            		<li><NavLink to="/News">News</NavLink></li>
 	                       					</ul>
 										</nav>
 									

@@ -1,6 +1,6 @@
 import 'regenerator-runtime/runtime';
 
-const BASEURL = 'https://sharemybillapi.herokuapp.com/BillManager';
+const BASEURL = 'https://agrofinesapi.herokuapp.com/DryFruit';
 
 function refNoGenerator(){
 	return new Date().valueOf();
