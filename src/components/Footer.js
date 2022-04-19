@@ -63,6 +63,7 @@ export default class Footer extends React.Component{
 			                            		<li><NavLink to="/About">About Us</NavLink></li>
 			                            		<li><NavLink to="/HealthTips">Health Tips</NavLink></li>
 			                            		<li><NavLink to="/News">News</NavLink></li>
+			                            		
 	                       					</ul>
 										</nav>
 									
