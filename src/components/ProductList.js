@@ -21,9 +21,16 @@ export default class ProductList extends React.Component{
      	if(this.el.style.display === "none"){
      		this.el.style.display = "block";
      	}
-
+     	let payLoad = {"productRequest":{
+     					"categoryId":""
+					}
+				}
+		const extraParameters = {			
+		    body: JSON.stringify(payLoad)
+	  	};
+     	
 		try{
-			APIServerCallWithoutAsync('','GET','/products')
+			APIServerCallWithoutAsync('','POST','/product/api/all',extraParameters)
 			.then(response => response.json())
 	    	.then(this.productsListResponse); 
     	}catch (e){
@@ -34,8 +41,9 @@ export default class ProductList extends React.Component{
 	}
 
 	productsListResponse(response){
+		console.log("data ::"+JSON.stringify(response));
 		this.setState({
-			productList : response,
+			productList : response.ProductResponse.productDetails,
 			loading : false
 		});
 	}

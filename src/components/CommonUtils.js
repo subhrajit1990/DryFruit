@@ -1,6 +1,6 @@
 import 'regenerator-runtime/runtime';
 
-const BASEURL = 'https://agrofinesapi.herokuapp.com/DryFruit';
+const BASEURL = 'http://localhost:9081/DryFruit';
 
 function refNoGenerator(){
 	return new Date().valueOf();
@@ -39,16 +39,16 @@ export async function  APIServerCall (...args)  {
 
 function callBackFunction(pRes) {
 	
-  if(pRes.status >= 200 &&  pRes.status < 300)
-	 return pRes;
+	if(pRes.status >= 200 &&  pRes.status < 300)
+	return pRes;
   
-  const error = new Error(pRes.statusText);
-  error.pRes = pRes;
-  throw error;
+  	const error = new Error(pRes.statusText);
+  	error.pRes = pRes;
+  	throw error;
 }
 
 export  function APIServerCallWithoutAsync(...args) {
-  	const extraParameters = {
+  	let headers = {
   		"method":args[1],
     	headers: {
 	    	'Content-Type': 'application/json',
@@ -58,7 +58,11 @@ export  function APIServerCallWithoutAsync(...args) {
 			'Authorization':'Basic YWRtaW46cGFzc3dvcmQ=',
     	}
   	};
-	return fetch('https://fakestoreapi.com'+args[2])
+  	let payLoad="";
+  	if(args[1] === "POST"){
+  		payLoad = Object.assign(args[3],headers);
+  	}
+	return fetch(BASEURL+args[2],payLoad)
     .then(res => callBackFunction(res))
     .catch(error => console.log(error))      
 }
