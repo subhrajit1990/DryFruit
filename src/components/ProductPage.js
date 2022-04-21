@@ -2,6 +2,7 @@ import React from 'react';
 import {Route,HashRouter,NavLink,useLocation} from 'react-router-dom';
 import Footer from './Footer';
 import {Breadcrumb} from './Breadcrumb';
+import viewRecentlyStorage from './localStorage';
 
 export default class ProductPage extends React.Component{
 	constructor(props) {
@@ -9,6 +10,7 @@ export default class ProductPage extends React.Component{
 	    this.state = {
 	      pDetails: {}
 	    };
+	    this.viewRecently(this.props.dataprops.productdetailsparams)
   	} 
 	componentDidMount(){
 		console.log("product page :: "+JSON.stringify(this.props.dataprops.productdetailsparams));
@@ -18,6 +20,9 @@ export default class ProductPage extends React.Component{
 		  });
 		}
 	}
+	viewRecently(res){
+		viewRecentlyStorage("viewRecentlyProducts",res,"PName");
+	};
 	render(){
 		const pDetailsPrint = this.state.pDetails;
 		return (

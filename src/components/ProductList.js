@@ -43,7 +43,7 @@ export default class ProductList extends React.Component{
 	productsListResponse(response){
 		console.log("data ::"+JSON.stringify(response));
 		this.setState({
-			productList : response.ProductResponse.productDetails,
+			productList : response.ProductResponse.productDetails || [],
 			loading : false
 		});
 	}

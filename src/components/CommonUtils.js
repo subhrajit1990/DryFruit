@@ -1,6 +1,6 @@
 import 'regenerator-runtime/runtime';
 
-const BASEURL = 'http://localhost:9081/DryFruit';
+const BASEURL = 'https://agrofinesapi.herokuapp.com/DryFruit';
 
 function refNoGenerator(){
 	return new Date().valueOf();
