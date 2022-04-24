@@ -11,12 +11,3 @@ workflows:
           filters:
             branches:
               only: master
-jobs:
-  build:
-    docker:
-      - image: circleci/node:10.16.0
-    steps:
-      - checkout
-      - run:
-          name: Run test
-          command: npm run build
