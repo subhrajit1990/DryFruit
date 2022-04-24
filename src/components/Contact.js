@@ -60,7 +60,7 @@ export default class Contact extends React.Component {
 							<div className="col-lg-8 offset-lg-2 text-center">
 								<div className="breadcrumb-text">
 									<p>Get 24/7 Support</p>
-									<h1>Contact us</h1>
+									<h1>Talk to a Human</h1>
 								</div>
 							</div>
 						</div>
@@ -72,7 +72,7 @@ export default class Contact extends React.Component {
 							<div className="col-lg-8 mb-5 mb-lg-0">
 								<div className="form-title">
 									<h2>Have you any question?</h2>
-									<p>Lorem ipsum  Lorem ipsum Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum !</p>
+									<p>Whenever you need us, we're here for you.</p>
 								</div>
 							 	<div id="form_status"></div>
 								<div className="contact-form">
