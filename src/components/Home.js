@@ -87,7 +87,7 @@ export default class Home extends React.Component {
 								<div className="product-image">
 									<a href=""><img src={viewRecentProducts["image"]} alt="pListImg" width="40" height="30"/></a>
 								</div>
-								<h3>{viewRecentProducts["tiele"]}</h3>
+								<h3>{viewRecentProducts["title"]}</h3>
 								<p className="product-price"><span>Per Kg</span> {viewRecentProducts["price"]}</p>
 								<a  className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
 							</div>
