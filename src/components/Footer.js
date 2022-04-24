@@ -23,7 +23,7 @@ export default class Footer extends React.Component{
         	const postData = {"emailSubscribeRequest":{
 				"email": email
 			}};
-			let finalRes = APIServerCall(postData,'POST','/Misc/api/emailSubscribe');
+			let finalRes = APIServerCall(postData,'POST','/misc/api/emailSubscribe');
 			console.log("Final results :: "+JSON.stringify(finalRes))
         }else{
         	alert("Error");

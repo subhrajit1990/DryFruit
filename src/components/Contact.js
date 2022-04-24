@@ -43,7 +43,7 @@ export default class Contact extends React.Component {
 				"message": message,
 				"subject": subject
 			}};
-			let finalRes = APIServerCall(postData,'POST','/Misc/api/contactMe');
+			let finalRes = APIServerCall(postData,'POST','/misc/api/contactMe');
 			console.log("Final results :: "+JSON.stringify(finalRes))
         }else{
         	alert("Error");
