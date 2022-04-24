@@ -2,22 +2,52 @@ import React from 'react';
 import Footer from './Footer';
 import { Route, HashRouter, NavLink, BrowserRouter } from 'react-router-dom';
 import viewRecentlyStorage from './localStorage';
+import {APIServerCallWithoutAsync} from './CommonUtils';
 
 
 export default class Home extends React.Component {
 	constructor(params){
 		super();
 		this.state = {
-			recentViews: []
+			recentViews: [],
+			recentProductList:[]
 		};
+		this.recentProductsListResponse = this.recentProductsListResponse.bind(this);
 
 	}
 
 	componentDidMount(){
+
 		const recentViewData = JSON.parse(localStorage.getItem("viewRecentlyProducts") || "[]");
 		this.setState({
         	recentViews : recentViewData
-      });
+     	 });
+
+		let payLoad = {"productRequest":{
+     					"categoryId":""
+					}
+				}
+		const extraParameters = {			
+		    body: JSON.stringify(payLoad)
+	  	};
+     	
+		try{
+			APIServerCallWithoutAsync('','POST','/product/api/recentProducts',extraParameters)
+			.then(response => response.json())
+	    	.then(this.recentProductsListResponse); 
+    	}catch (e){
+    		console.log("Error occurred :: "+e);
+    	}finally {
+    		console.log("finally executing");
+    	}
+
+	}
+
+	recentProductsListResponse(response){
+		console.log("recent products ::"+JSON.stringify(response));
+		this.setState({
+			recentProductList : response.ProductResponse.productDetails || [],
+		});
 	}
 
 	viewRecentHeader(){
@@ -39,6 +69,27 @@ export default class Home extends React.Component {
 								<img src={viewProducts["PImage"]} alt="pListImg" width="40" height="30"/>
 								<p>{viewProducts["PName"]}</p>
 								<p>{viewProducts["PPrice"]}</p>
+							</div>
+						</div>
+					);
+				});
+			}
+		}
+
+		var recentlyAddedProducts="";
+		if((this.state.recentProductList).length > 0){
+			var viewRecentAddedProductsDataPaint = (this.state.recentProductList);
+			if(viewRecentAddedProductsDataPaint.length > 0){
+				recentlyAddedProducts = viewRecentAddedProductsDataPaint.map((viewRecentProducts,i) => {
+					return(	
+						<div className="col-lg-4 col-md-6 text-center" key={i}>
+							<div className="single-product-item">
+								<div className="product-image">
+									<a href=""><img src={viewRecentProducts["image"]} alt="pListImg" width="40" height="30"/></a>
+								</div>
+								<h3>{viewRecentProducts["tiele"]}</h3>
+								<p className="product-price"><span>Per Kg</span> {viewRecentProducts["price"]}</p>
+								<a  className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
 							</div>
 						</div>
 					);
@@ -80,36 +131,7 @@ export default class Home extends React.Component {
 						</div>
 
 				<div className="row">
-					<div className="col-lg-4 col-md-6 text-center">
-						<div className="single-product-item">
-							<div className="product-image">
-								<a href=""><img src="" alt=""/></a>
-							</div>
-							<h3>Almond</h3>
-							<p className="product-price"><span>Per Kg</span> 85</p>
-							<a  className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
-						</div>
-					</div>
-					<div className="col-lg-4 col-md-6 text-center">
-						<div className="single-product-item">
-							<div className="product-image">
-								<a href=""><img src="" alt=""/></a>
-							</div>
-							<h3>Apricot</h3>
-							<p className="product-price"><span>Per Kg</span> 70 </p>
-							<a  className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
-						</div>
-					</div>
-					<div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-						<div className="single-product-item">
-							<div className="product-image">
-								<a href=""><img src="" alt=""/></a>
-							</div>
-							<h3>Dates</h3>
-							<p className="product-price"><span>Per Kg</span> 35 </p>
-							<a  className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
-						</div>
-					</div>
+					{recentlyAddedProducts}
 				</div>
 			</div>
 		</div>
