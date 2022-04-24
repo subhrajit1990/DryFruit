@@ -33,7 +33,7 @@ export default class Header extends React.Component {
 										<div className="main-menu-wrap">
 											<div className="site-logo">
 												<a href="/">
-													<img style={{width:"156px",height:"26px"}} src="" alt="" />
+													<img  src="./static/img/logo.png" alt="" />
 												</a>
 											</div>
 											<a className="mobile-show search-bar-icon" href="#">
