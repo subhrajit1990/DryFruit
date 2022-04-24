@@ -14,6 +14,7 @@ workflows:
               only: master
 jobs:
   build:
+  steps:
       - run:
           name: Run test
           command: npm run build
