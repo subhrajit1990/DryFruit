@@ -40,7 +40,8 @@ export default class Footer extends React.Component{
 							<div className="col-lg-3 col-md-6">
 								<div className="footer-box about-widget">
 									<h2 className="widget-title">About us</h2>
-									<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+									<p>Agrofine is the largest edible nuts and dry fruits brand in India, offering the widest range of raw and flavored products. At Agrofine, We have dedicated processing facilities for Almonds, Cashews, Pistachios and other dry fruits.<br/>
+We have invested heavily in mechanization to achieve huge volumes with high hygiene standards required for the ever-growing segment. We have a diverse portfolio with a product-focused approach to ensure highest quality of production in our world-class facilities.</p>
 								</div>
 							</div>
 							<div className="col-lg-3 col-md-6">
