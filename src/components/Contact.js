@@ -53,7 +53,7 @@ export default class Contact extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
+            <>
 				<div id="dryfruit-contactus" className="breadcrumb-section breadcrumb-bg">
 					<div className="container">
 						<div className="row">
@@ -110,7 +110,7 @@ export default class Contact extends React.Component {
 					</div>
 				</div>
 				<Footer/>
-			</React.Fragment>
+			</>
 		);
 	}
 }

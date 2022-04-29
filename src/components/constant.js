@@ -7,6 +7,7 @@ import ProductsList from './ProductList';
 import ProductPageInterceptor from './ProductPageInterceptor';
 import ProductList from './ProductList';
 import ProductPage from './ProductPage';
+import Cart from './Cart';
 import App from './App';
 
 export const routes = (
@@ -17,5 +18,6 @@ export const routes = (
 	    <Route  name="ProductList" path="/ProductList" element={<ProductList />} />
 	    <Route  end name="ProductPageInterceptor" path="/ProductPageInterceptor" element={<ProductPageInterceptor />} />
 	    <Route  end name="ProductPage" path="/ProductPage" element={<ProductPage />} />
+	    <Route  end name="Cart" path="/Cart" element={<Cart />} />
   	</Routes>
 );
