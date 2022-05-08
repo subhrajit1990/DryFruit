@@ -1,4 +1,4 @@
-import React from 'react';
+	import React from 'react';
 import {Route,HashRouter,NavLink,Link,BrowserRouter as Router,useNavigate} from 'react-router-dom';
 import {APIServerCallWithoutAsync} from './CommonUtils';
 import {NotFoundPage, NoDataFoundPage}  from './NotFoundPage';
@@ -65,9 +65,8 @@ export default class ProductList extends React.Component{
 		            "PCategory": products["category"],
 		            "pDes": products["description"]
 		        };
-		        return(
-		        	<div className="row product-lists" style={{position: "relative", height: "700px"}} key={i}>
-						<div className="col-lg-4 col-md-6 text-center strawberry" style={{position: "absolute", left: "0px", top: "0px"}}>
+		        return(	        	
+						<div className="col-lg-4 col-md-6 text-center strawberry" style={{position: "absolute", left: i*380, top: "0px"}} key={i}>
 							<div className="single-product-item">
 								<div className="product-image">
 									<a href="/">
@@ -78,8 +77,7 @@ export default class ProductList extends React.Component{
 								<p className="product-price"><span>Per Kg</span> {products["price"]} </p>
 								<Link key={i} to= "/ProductPageInterceptor" state= {{"productdetailsparams":productDetails} } >Read More ...</Link>	
 							</div>
-						</div>
-					</div>
+						</div>					
 	        	);
       		});
 			if (this.el) {
@@ -91,7 +89,9 @@ export default class ProductList extends React.Component{
 		 	<Breadcrumb/>
 		    <div className="product-section mt-150 mb-150">
 				<div className="container">
+					<div className="row product-lists" style={{position: "relative", height: "700px"}}>
 				 	{productListSection}
+				 	</div>
 		        </div>
 		    </div> 
 		    <Footer />
