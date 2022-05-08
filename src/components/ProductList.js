@@ -1,4 +1,4 @@
-	import React from 'react';
+import React from 'react';
 import {Route,HashRouter,NavLink,Link,BrowserRouter as Router,useNavigate} from 'react-router-dom';
 import {APIServerCallWithoutAsync} from './CommonUtils';
 import {NotFoundPage, NoDataFoundPage}  from './NotFoundPage';
