@@ -30,6 +30,7 @@ export default class ProductList extends React.Component{
 	  	};
      	
 		try{
+			console.log("Loading productList");
 			APIServerCallWithoutAsync('','POST','/product/api/all',extraParameters)
 			.then(response => response.json())
 	    	.then(this.productsListResponse); 
