@@ -67,7 +67,7 @@ export default class ProductList extends React.Component{
 		            "pDes": products["description"]
 		        };
 		        return(	        	
-						<div className="col-lg-4 col-md-6 text-center strawberry" style={{position: "absolute", left: i * 380, top: "0px"}} key={i}>
+						<div className="col-lg-4 col-md-6 text-center strawberry" style={{position: "relative", display: "inline-block", float: "left",padding: "10px"}} key={i}>
 							<div className="single-product-item">
 								<div className="product-image">
 									<a href="/">
