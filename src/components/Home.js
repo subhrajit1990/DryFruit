@@ -64,7 +64,7 @@ export default class Home extends React.Component {
 			if(viewRecentDataPaint.length > 0){
 				viewRecentDataPaintWithData = viewRecentDataPaint.map((viewProducts,i) => {
 					return(	
-						<div className="col-sm-2" key={i}>
+						<div className="col-sm-2 col-md-3 text-center" key={i}>
 							<div className="thumbnail">
 								<img src={viewProducts["PImage"]} alt="pListImg" width="40" height="30"/>
 								<p>{viewProducts["PName"]}</p>
@@ -137,7 +137,9 @@ export default class Home extends React.Component {
 		</div>
 		<div className="container-fluid text-center">
 					{this.viewRecentHeader()}
-					{viewRecentDataPaintWithData}	
+					<div className="row">
+						{viewRecentDataPaintWithData}	
+					</div>
 				</div>
 		<Footer />
 	</>
