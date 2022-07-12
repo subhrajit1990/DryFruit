@@ -98,7 +98,7 @@ export default class Contact extends React.Component {
 									</div>
 									<div className="contact-form-box">
 										<h4><i className="far fa-clock"></i> Shop Hours</h4>
-										<p>MON - FRIDAY: 8 to 9 PM <br/> SAT - SUN: 10 to 8 PM </p>
+										<p>MON - FRIDAY: 8 AM to 9 PM <br/> SAT - SUN: 10 AM to 8 PM </p>
 									</div>
 									<div className="contact-form-box">
 										<h4><i className="fas fa-address-book"></i> Contact</h4>
