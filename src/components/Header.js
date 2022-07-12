@@ -34,7 +34,6 @@ export default class Header extends React.Component {
 											<div className="site-logo">
 												<a href="/">
 													<img  src="./static/img/logo.png" alt="" />
-													<img  src="./dist/static/img/logo.png" alt="" />
 												</a>
 											</div>
 											<a className="mobile-show search-bar-icon" href="#">
