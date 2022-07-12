@@ -90,7 +90,7 @@ export default class ProductList extends React.Component{
 		 	<Breadcrumb/>
 		    <div className="product-section mt-150 mb-150">
 				<div className="container">
-					<div className="row product-lists" style={{position: "relative", height: "700px"}}>
+					<div className="row product-lists" style={{position: "relative", height: "auto"}}>
 				 	{productListSection}
 				 	</div>
 		        </div>
