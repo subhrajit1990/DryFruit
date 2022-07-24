@@ -22,14 +22,6 @@ export default class Home extends React.Component {
 		this.setState({
         	recentViews : recentViewData
      	 });
-
-		let payLoad = {"productRequest":{
-     					"categoryId":""
-					}
-				}
-		const extraParameters = {			
-		    body: JSON.stringify(payLoad)
-	  	};
      	
 		try{
 			APIServerCallWithoutAsync('','GET','/product/api/recentProducts')
