@@ -8,7 +8,6 @@ import {Breadcrumb} from './Breadcrumb';
 
 export default class ProductList extends React.Component{
 	constructor(props){
-		console.log("Yes3");
 		super(props);
 		this.productsListResponse = this.productsListResponse.bind(this);
 		this.state={
@@ -19,7 +18,6 @@ export default class ProductList extends React.Component{
 	}
 	componentDidMount(){
 		// Needs to call the original service
-		console.log("Yes");
      	if(this.el.style.display === "none"){
      		this.el.style.display = "block";
      	}
@@ -44,7 +42,6 @@ export default class ProductList extends React.Component{
     	}finally {
     		
     	}
-    	console.log("Yes2");
 	}
 
 	productsListResponse(response){
@@ -68,10 +65,16 @@ export default class ProductList extends React.Component{
 		            "PName": products["title"],
 		            "PImage": products["image"],
 		            "PBuyBtn": products["BUY"],
-		            "PPrice": products["price"],
+		            "PPrice": products["productInventory"],
 		            "PCategory": products["category"],
 		            "pDes": products["description"]
 		        };
+
+		       //	let amountQuantityAmount = (this.state.productList.productInventory).map((tempData, i) => {
+
+		       		console.log(JSON.stringify(productDetails));
+		      // 	}
+
 		        return(	   
 		        	<Link key={i} to= "/ProductPageInterceptor" state= {{"productdetailsparams":productDetails} } >     	
 						<div className="col-lg-4 col-md-6 text-center strawberry" style={{position: "relative", display: "inline-block", float: "left",padding: "10px"}} key={i}>
