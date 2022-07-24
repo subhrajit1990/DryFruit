@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Varieties of chakhna",
   "main": "index.js",
+  "homepage": "/",
   "scripts": {
     "dev": "webpack serve",
     "start": "node src/server.js",
