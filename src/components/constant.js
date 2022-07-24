@@ -12,10 +12,10 @@ import App from './App';
 
 export const routes = (
     <Routes>
-	    <Route end path="/" element={<Home />}/>
+	    <Route  path="/" element={<Home />}/>
 	    <Route  path="/Contact" element={<Contact />}/>
 	    <Route  path="/About" element={<About />}/>
-	    <Route  name="ProductList" path="/ProductList" element={<ProductList />} />
+	    <Route  path="/ProductList" element={<ProductList />} />
 	    <Route  end name="ProductPageInterceptor" path="/ProductPageInterceptor" element={<ProductPageInterceptor />} />
 	    <Route  end name="ProductPage" path="/ProductPage" element={<ProductPage />} />
 	    <Route  end name="Cart" path="/Cart" element={<Cart />} />
