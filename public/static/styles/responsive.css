@@ -556,6 +556,22 @@
 	    z-index: 999;
 	    color: #fff;
 	}
+
+/* Mine custom footer  -- starts*/
+
+.h-12 {
+    height: 3rem;
+}
+
+.visible {
+    visibility: visible;
+}
+
+/* Mine custom footer -- ends */
+
+
+
+
 }
 /* Wide Mobile Layout: 480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) { 
