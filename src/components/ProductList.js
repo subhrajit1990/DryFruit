@@ -22,7 +22,10 @@ export default class ProductList extends React.Component{
      		this.el.style.display = "block";
      	}
      	let payLoad = {"productRequest":{
-     					"categoryId":""
+     						"name":"",
+							"pageNo":"0",
+							"pageSize":"10",
+							"sortBy":"
 					}
 				}
 		const extraParameters = {			
