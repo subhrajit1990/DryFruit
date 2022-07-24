@@ -72,7 +72,7 @@ export default class ProductList extends React.Component{
 
 		       //	let amountQuantityAmount = (this.state.productList.productInventory).map((tempData, i) => {
 
-		       		console.log(JSON.stringify(productDetails));
+		       		console.log(" temp data "+JSON.stringify(productDetails));
 		      // 	}
 
 		        return(	   
