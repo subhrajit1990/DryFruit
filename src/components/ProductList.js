@@ -69,11 +69,7 @@ export default class ProductList extends React.Component{
 		            "PCategory": products["category"],
 		            "pDes": products["description"],
 		            "pSku": products["sku"]
-
-		        };
-
-		       		console.log(" temp data "+JSON.stringify(productDetails));
-		   
+		        };		   
 		        return(	   
 		        	<Link key={i} to= "/ProductPageInterceptor" state= {{"productdetailsparams":productDetails} } >     	
 						<div className="col-lg-4 col-md-6 text-center strawberry" style={{position: "relative", display: "inline-block", float: "left",padding: "10px"}} key={i}>
