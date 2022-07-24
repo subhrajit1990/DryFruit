@@ -25,7 +25,7 @@ export default class ProductList extends React.Component{
      						"name":"",
 							"pageNo":"0",
 							"pageSize":"10",
-							"sortBy":"
+							"sortBy":""
 					}
 				}
 		const extraParameters = {			
