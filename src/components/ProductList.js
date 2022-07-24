@@ -69,7 +69,8 @@ export default class ProductList extends React.Component{
 		            "PCategory": products["category"],
 		            "pDes": products["description"]
 		        };
-		        return(	        	
+		        return(	   
+		        	<Link key={i} to= "/ProductPageInterceptor" state= {{"productdetailsparams":productDetails} } >     	
 						<div className="col-lg-4 col-md-6 text-center strawberry" style={{position: "relative", display: "inline-block", float: "left",padding: "10px"}} key={i}>
 							<div className="single-product-item">
 								<div className="product-image">
@@ -79,9 +80,10 @@ export default class ProductList extends React.Component{
 								</div>
 								<h3>{products["title"]}</h3>
 								<p className="product-price"><span>Per Kg</span> {products["price"]} </p>
-								<Link key={i} to= "/ProductPageInterceptor" state= {{"productdetailsparams":productDetails} } >Read More ...</Link>	
+								<div>Read More ...</div>	
 							</div>
-						</div>					
+						</div>	
+					</Link>				
 	        	);
       		});
 			if (this.el) {
