@@ -32,7 +32,7 @@ export default class Home extends React.Component {
 	  	};
      	
 		try{
-			APIServerCallWithoutAsync('','GET','/product/api/recentProducts',extraParameters)
+			APIServerCallWithoutAsync('','GET','/product/api/recentProducts')
 			.then(response => response.json())
 	    	.then(this.recentProductsListResponse); 
     	}catch (e){
