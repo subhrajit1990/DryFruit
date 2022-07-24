@@ -18,6 +18,7 @@ export default class ProductList extends React.Component{
 	}
 	componentDidMount(){
 		// Needs to call the original service
+		console.log("Yes");
      	if(this.el.style.display === "none"){
      		this.el.style.display = "block";
      	}
@@ -42,6 +43,7 @@ export default class ProductList extends React.Component{
     	}finally {
     		
     	}
+    	console.log("Yes2");
 	}
 
 	productsListResponse(response){
