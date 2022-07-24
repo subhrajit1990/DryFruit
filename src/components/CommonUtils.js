@@ -61,6 +61,8 @@ export  function APIServerCallWithoutAsync(...args) {
   	let payLoad="";
   	if(args[1] === "POST"){
   		payLoad = Object.assign(args[3],headers);
+  	} else{
+  		payLoad = headers;
   	}
 	return fetch(BASEURL+args[2],payLoad)
     .then(res => callBackFunction(res))
