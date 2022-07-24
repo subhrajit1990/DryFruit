@@ -67,14 +67,13 @@ export default class ProductList extends React.Component{
 		            "PBuyBtn": products["BUY"],
 		            "PPrice": products["productInventory"],
 		            "PCategory": products["category"],
-		            "pDes": products["description"]
+		            "pDes": products["description"],
+		            "pSku": products["sku"]
+
 		        };
 
-		       //	let amountQuantityAmount = (this.state.productList.productInventory).map((tempData, i) => {
-
 		       		console.log(" temp data "+JSON.stringify(productDetails));
-		      // 	}
-
+		   
 		        return(	   
 		        	<Link key={i} to= "/ProductPageInterceptor" state= {{"productdetailsparams":productDetails} } >     	
 						<div className="col-lg-4 col-md-6 text-center strawberry" style={{position: "relative", display: "inline-block", float: "left",padding: "10px"}} key={i}>
