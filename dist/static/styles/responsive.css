@@ -198,6 +198,20 @@
 	    z-index: 999;
 	    color: #fff;
 	}
+	/* Mine custom footer  -- starts*/
+
+.h-12 {
+    height: 3rem;
+}
+
+.visible {
+    visibility: visible;
+}
+
+/* Mine custom footer -- ends */
+
+
+
 
 }
 
