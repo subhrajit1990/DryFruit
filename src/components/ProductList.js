@@ -8,6 +8,7 @@ import {Breadcrumb} from './Breadcrumb';
 
 export default class ProductList extends React.Component{
 	constructor(props){
+		console.log("Yes3");
 		super(props);
 		this.productsListResponse = this.productsListResponse.bind(this);
 		this.state={
