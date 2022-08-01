@@ -30,7 +30,6 @@ export default class ProductPage extends React.Component{
 
 		if( pDetailsPrint.hasOwnProperty("PPrice")){
 			priceAndType =  <DropDown productData={pDetailsPrint["PPrice"]}/>;
-			return priceAndType;
 		}
 
 		return (
