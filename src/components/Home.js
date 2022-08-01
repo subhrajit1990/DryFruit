@@ -76,6 +76,7 @@ export default class Home extends React.Component {
 					return(	
 						<div className="col-lg-4 col-md-6 text-center" key={i}>
 							<div className="single-product-item">
+								<div className="offers"></div>
 								<div className="product-image">
 									<a href=""><img src={viewRecentProducts["image"]} alt="pListImg" width="40" height="30"/></a>
 								</div>

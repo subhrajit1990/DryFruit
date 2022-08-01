@@ -15,7 +15,7 @@ export const routes = (
 	    <Route exact path="/" element={<Home />}/>
 	    <Route  path="/Contact" element={<Contact />}/>
 	    <Route  path="/About" element={<About />}/>
-	    <Route exact path="/ProductList" element={<ProductList />} />
+	    <Route  path="/ProductList" element={<ProductList />} />
 	    <Route  end name="ProductPageInterceptor" path="/ProductPageInterceptor" element={<ProductPageInterceptor />} />
 	    <Route  end name="ProductPage" path="/ProductPage" element={<ProductPage />} />
 	    <Route  end name="Cart" path="/Cart" element={<Cart />} />
