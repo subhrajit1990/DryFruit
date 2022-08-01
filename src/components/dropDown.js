@@ -5,29 +5,28 @@ const dropDown = (props) => {
   console.log( "drop down list :: " +JSON.stringify(props.productData));
   const options = props.productData;
 
-  const [value, setValue] = React.useState('');
-  const [optionsType, setOptionsType] = React.useState('');
-
+  const [value, setValue] = React.useState({
+      optionType : "",
+      optionAmt:""
+  })
+  
 
   const handleChange = (event) => {
-    setValue(event.target.value);
-    optionsEvent(event);   
+    setValue({
+      optionType : event.target.optionsType,
+      optionAmt : event.target.value
+    }) 
   };
-
-  optionsEvent(event){
-    setType(event.target.setOptionsType);
-  }
-
   return (
     <div>
       <Dropdown
         label="What do we eat?"
         options={options}
-        optionsType= {optionsType}
-        value={value}
+        optionsType= {state.optionsType}
+        value={state.value}
         onChange={handleChange}
       />
-      <p className="product-price"><span>{optionsType}</span> {value}</p>
+      <p className="product-price"><span>{state.optionsType}</span> {state.optionAmt}</p>
     </div>
   );
 };
