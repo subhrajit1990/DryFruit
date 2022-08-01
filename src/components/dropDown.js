@@ -1,10 +1,7 @@
 import * as React from 'react';
 
-const dropDown = (props) => {
-
-  console.log( "drop down list :: " +JSON.stringify(props.productData));
+export default const dropDown = (props) => {
   const options = props.productData;
-
   const [value, setValue] = React.useState({
       optionType : "",
       optionAmt:""
@@ -12,7 +9,6 @@ const dropDown = (props) => {
   
 
   const handleChange = (event) => {
-    console.log(event.target.options[event.target.selectedIndex].attributes.variantname.value)
     setValue({
       optionType : event.target.options[event.target.selectedIndex].attributes.variantname.value,
       optionAmt : event.target.value
@@ -44,5 +40,3 @@ const Dropdown = ({ label, value, variantName, options, onChange }) => {
     </label>
   );
 };
-
-export default dropDown;
