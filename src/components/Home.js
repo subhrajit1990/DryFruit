@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 import { Route, HashRouter, NavLink, BrowserRouter } from 'react-router-dom';
 import viewRecentlyStorage from './localStorage';
-import dropDown from './dropDown';
+import DropDown from './dropDown';
 import {APIServerCallWithoutAsync} from './CommonUtils';
 
 
@@ -85,8 +85,7 @@ export default class Home extends React.Component {
 									<a href=""><img src={viewRecentProducts["image"]} alt="pListImg" width="40" height="30"/></a>
 								</div>
 								<h3>{viewRecentProducts["title"]}</h3>
-
-								<dropDown productData={viewRecentProducts["productInventory"]}/>
+								<DropDown productData={viewRecentProducts["productInventory"]}/>
 								<a  className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
 							</div>
 						</div> 
