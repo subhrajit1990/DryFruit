@@ -42,17 +42,18 @@ export default class Home extends React.Component {
 		});
 	}
 
+	const handleChangeOptions = (event) => {
+    	setValue(event.target.value);
+  	};
+
 	viewRecentHeader(){
 		if((this.state.recentViews).length > 0){
 			return (<div className="section-title">	<h3><span className="orange-text">Recently</span> Viewed</h3></div>);
 		}
-	};
+	}
 
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
+  
     render() {
 
     	var viewRecentDataPaintWithData = "";
