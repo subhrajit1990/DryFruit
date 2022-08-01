@@ -3,13 +3,9 @@ import * as React from 'react';
 const dropDown = (props) => {
 
   console.log( "drop down list :: " +JSON.stringify(props.productData));
-  const options = [
-    { label: 'Fruit', value: 'fruit' },
-    { label: 'Vegetable', value: 'vegetable' },
-    { label: 'Meat', value: 'meat' },
-  ];
+  const options = props.productData;
 
-  const [value, setValue] = React.useState('fruit');
+  const [value, setValue] = React.useState('');
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -23,8 +19,7 @@ const dropDown = (props) => {
         value={value}
         onChange={handleChange}
       />
-
-      <p>We eat {value}!</p>
+      <p className="product-price"><span>Per Kg</span> {value}</p>
     </div>
   );
 };
@@ -35,7 +30,7 @@ const Dropdown = ({ label, value, options, onChange }) => {
       {label}
       <select value={value} onChange={onChange}>
         {options.map((option) => (
-          <option value={option.value}>{option.label}</option>
+          <option value={option.price}>{option.variantName}</option>
         ))}
       </select>
     </label>
