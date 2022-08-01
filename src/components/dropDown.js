@@ -25,7 +25,6 @@ const dropDown = (props) => {
         value={value.optionAmt}
         onChange={handleChange}
       />
-      console.log(value.optionAmt + "asdasdsadsadsadas    "+value.optionType);
       <p className="product-price"><span>{value.optionType}</span> {value.optionAmt}</p>
     </div>
   );
@@ -37,7 +36,7 @@ const Dropdown = ({ label, value, options, onChange }) => {
       {label}
       <select value={value}  onChange={onChange}>
         {options.map((option) => (
-          <option value={option.prie} variantName={option.variantName}>{option.variantName}</option>
+          <option value={option.price} variantName={option.variantName}>{option.variantName}</option>
         ))} 
       </select>
     </label>
