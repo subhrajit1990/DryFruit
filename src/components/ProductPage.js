@@ -40,7 +40,6 @@ export default class ProductPage extends React.Component{
 							<div className="col-md-7">
 								<div className="single-product-content">
 									<h3>{pDetailsPrint.PName}</h3>
-									<p className="single-product-pricing"><span>Per Kg</span>{pDetailsPrint.PPrice}</p>
 									<p>{pDetailsPrint.pDes}</p>
 									<div className="single-product-form">
 										<form >
