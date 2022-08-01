@@ -36,7 +36,7 @@ const Dropdown = ({ label, value, variantName, options, onChange }) => {
   return (
     <label>
       {label}
-      <select value={value}  onChange={onChange}>
+      <select value={value} variantName={variantName} onChange={onChange}>
         {options.map((option) => (
           <option value={option.price} variantName={option.variantName}>{option.variantName}</option>
         ))} 
