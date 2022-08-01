@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 import { Route, HashRouter, NavLink, BrowserRouter } from 'react-router-dom';
 import viewRecentlyStorage from './localStorage';
+import dropDown from './dropDown';
 import {APIServerCallWithoutAsync} from './CommonUtils';
 
 
@@ -13,8 +14,6 @@ export default class Home extends React.Component {
 			recentProductList:[]
 		};
 		this.recentProductsListResponse = this.recentProductsListResponse.bind(this);
-		this.handleChangeOptions = this.handleChangeOptions.bind(this);
-		const [value, setValue] = React.useState('fruit');
 	}
 
 	componentDidMount(){
@@ -43,9 +42,7 @@ export default class Home extends React.Component {
 		});
 	}
 
-	handleChangeOptions(event) {
-    	setValue(event.target.value);
-  	};
+	
 
 	viewRecentHeader(){
 		if((this.state.recentViews).length > 0){
@@ -89,20 +86,10 @@ export default class Home extends React.Component {
 								</div>
 								<h3>{viewRecentProducts["title"]}</h3>
 
-								<div>
-      								<label>
-       									 What do we eat?
-        								<select value={value} onChange={this.handleChangeOptions}>
-          									{viewRecentProducts["productInventory"].map((option) => (
-        										<option value={option.price}>{option.variantName}</option>
-          									))}
-        								</select>
-      								</label>
-      								<p className="product-price"><span>Per Kg</span> {value}</p>
-    							</div>
+								<dropDown productData={viewRecentProducts["productInventory"]}/>
 								<a  className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
 							</div>
-						</div>
+						</div> 
 					);
 				});
 			}
