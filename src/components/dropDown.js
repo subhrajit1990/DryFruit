@@ -27,7 +27,7 @@ const dropDown = (props) => {
         value={value.optionAmt}
         onChange={handleChange}
       />
-      <p className="product-price"><span>{value.optionType}</span> {value.optionAmt}</p>
+      <p className="product-price"><span>{variantName}</span> {value}</p>
     </div>
   );
 };
