@@ -36,7 +36,6 @@ export default class Home extends React.Component {
 	}
 
 	recentProductsListResponse(response){
-		console.log("recent products ::"+JSON.stringify(response));
 		this.setState({
 			recentProductList : response.ProductResponse.productDetails || [],
 		});

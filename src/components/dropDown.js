@@ -12,7 +12,6 @@ const dropDown = (props) => {
   
 
   const handleChange = (event) => {
-    debugger;
     setValue({
       optionType : event.target.variantName,
       optionAmt : event.target.value
@@ -26,7 +25,8 @@ const dropDown = (props) => {
         value={value.optionAmt}
         onChange={handleChange}
       />
-      <p className="product-price"><span>{value.optionType}</span> {value}</p>
+      console.log(value.optionAmt + "asdasdsadsadsadas    "+value.optionType);
+      <p className="product-price"><span>{value.optionType}</span> {value.optionAmt}</p>
     </div>
   );
 };
