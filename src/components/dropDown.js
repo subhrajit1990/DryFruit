@@ -13,7 +13,7 @@ const dropDown = (props) => {
 
   const handleChange = (event) => {
     debugger;
-    console.log(event.target.attributes.getNamedItem("variantname").value + " :: ddaaa :: "+event.target.getAttribute('variantname'));
+    console.log(event.target.attributes.getNamedItem("data-variantname").value + " :: ddaaa :: "+event.target.getAttribute('data-variantname'));
     setValue({
       optionType : event.target.getAttribute('variantName'),
       optionAmt : event.target.value
@@ -22,7 +22,7 @@ const dropDown = (props) => {
   return (
     <div>
       <Dropdown
-        label="What do we eat?"
+        label=""
         options={options}
         variantName={value.optionType}
         value={value.optionAmt}
@@ -37,9 +37,9 @@ const Dropdown = ({ label, value, variantName, options, onChange }) => {
   return (
     <label>
       {label}
-      <select value={value} variantName={variantName} onChange={onChange}>
+      <select value={value} onChange={onChange}>
         {options.map((option) => (
-          <option value={option.price} variantName={option.variantName}>{option.variantName}</option>
+          <option value={option.price} data-variantName={option.variantName}>{option.variantName}</option>
         ))} 
       </select>
     </label>
