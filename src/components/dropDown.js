@@ -2,7 +2,7 @@ import * as React from 'react';
 
 const dropDown = (props) => {
 
-  console.log(JSON.stringify(props.productData));
+  console.log( "drop down list :: " +JSON.stringify(props.productData));
   const options = [
     { label: 'Fruit', value: 'fruit' },
     { label: 'Vegetable', value: 'vegetable' },
