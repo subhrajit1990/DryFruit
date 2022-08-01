@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export default const dropDown = (props) => {
+const dropDown = (props) => {
   const options = props.productData;
   const [value, setValue] = React.useState({
       optionType : "",
@@ -40,3 +40,5 @@ const Dropdown = ({ label, value, variantName, options, onChange }) => {
     </label>
   );
 };
+
+export default dropDown;
