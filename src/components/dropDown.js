@@ -12,6 +12,7 @@ const dropDown = (props) => {
   
 
   const handleChange = (event) => {
+    console("ddaaa :: "+event.target.variantName);
     setValue({
       optionType : event.target.variantName,
       optionAmt : event.target.value
