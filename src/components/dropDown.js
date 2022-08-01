@@ -22,11 +22,11 @@ const dropDown = (props) => {
       <Dropdown
         label="What do we eat?"
         options={options}
-        optionsType= {value.optionsType}
+        optionsType= {value.optionType}
         value={value.optionAmt}
         onChange={handleChange}
       />
-      <p className="product-price"><span>{value.optionsType}</span> {value.optionAmt}</p>
+      <p className="product-price"><span>{value.optionType}</span> {value.optionAmt}</p>
     </div>
   );
 };
