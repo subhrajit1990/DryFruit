@@ -11,11 +11,10 @@ const dropDown = (props) => {
 
   const handleChange = (event) => {
     setValue(event.target.value);
-    options(event);
-    
+    optionsEvent(event);   
   };
 
-  option(event){
+  optionsEvent(event){
     setType(event.target.setOptionsType);
   }
 
