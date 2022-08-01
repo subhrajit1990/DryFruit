@@ -45,6 +45,7 @@ export default class ProductPage extends React.Component{
 										<form >
 											<input type="number" placeholder="0"/>
 										</form>
+										<DropDown productData={pDetailsPrint["PPrice"]}/>
 										<a href="/" className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
 										<p><strong>Categories: </strong>{pDetailsPrint.PCategory}</p>
 									</div>
