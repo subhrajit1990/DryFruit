@@ -14,7 +14,7 @@ const dropDown = (props) => {
   const handleChange = (event) => {
     debugger;
     setValue({
-      optionType : event.target.value,
+      optionType : event.target.variantName,
       optionAmt : event.target.value
     }) 
   };
@@ -37,7 +37,7 @@ const Dropdown = ({ label, value, options, onChange }) => {
       {label}
       <select value={value}  onChange={onChange}>
         {options.map((option) => (
-          <option value={option.prie}>{option.variantName}</option>
+          <option value={option.prie} variantName={option.variantName}>{option.variantName}</option>
         ))} 
       </select>
     </label>
