@@ -12,11 +12,9 @@ const dropDown = (props) => {
   
 
   const handleChange = (event) => {
-    debugger;
-    console.log(" :: ddaaa :: "+event.target.getAttribute('variantname'));
     console.log(event.target.options[event.target.selectedIndex].attributes.variantname.value)
     setValue({
-      optionType : event.target.getAttribute('variantName'),
+      optionType : event.target.options[event.target.selectedIndex].attributes.variantname.value,
       optionAmt : event.target.value
     }) 
   };
