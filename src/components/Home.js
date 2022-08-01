@@ -13,7 +13,7 @@ export default class Home extends React.Component {
 			recentProductList:[]
 		};
 		this.recentProductsListResponse = this.recentProductsListResponse.bind(this);
-
+		const [value, setValue] = React.useState('fruit');
 	}
 
 	componentDidMount(){
@@ -48,6 +48,11 @@ export default class Home extends React.Component {
 		}
 	};
 
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
     render() {
 
     	var viewRecentDataPaintWithData = "";
@@ -81,7 +86,18 @@ export default class Home extends React.Component {
 									<a href=""><img src={viewRecentProducts["image"]} alt="pListImg" width="40" height="30"/></a>
 								</div>
 								<h3>{viewRecentProducts["title"]}</h3>
-								<p className="product-price"><span>Per Kg</span> {viewRecentProducts["price"]}</p>
+
+								<div>
+      								<label>
+       									 What do we eat?
+        								<select value={value} onChange={handleChangeOptions}>
+          									{viewRecentProducts["productInventory"].map((option) => (
+        										<option value={option.price}>{option.variantName}</option>
+          									))}
+        								</select>
+      								</label>
+      								<p className="product-price"><span>Per Kg</span> {value}</p>
+    							</div>
 								<a  className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
 							</div>
 						</div>
