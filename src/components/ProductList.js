@@ -5,6 +5,7 @@ import {NotFoundPage, NoDataFoundPage}  from './NotFoundPage';
 import Footer from './Footer';
 import ProductPageInterceptor from './ProductPageInterceptor';
 import {Breadcrumb} from './Breadcrumb';
+import DropDown from './dropDown';
 
 export default class ProductList extends React.Component{
 	constructor(props){
@@ -80,7 +81,7 @@ export default class ProductList extends React.Component{
 									</a>
 								</div>
 								<h3>{products["title"]}</h3>
-								<p className="product-price"><span>Per Kg</span> {products["price"]} </p>
+								<DropDown productData={products["productInventory"]}/>
 								<div>Read More ...</div>	
 							</div>
 						</div>	

@@ -3,6 +3,7 @@ import {Route,HashRouter,NavLink,useLocation} from 'react-router-dom';
 import Footer from './Footer';
 import {Breadcrumb} from './Breadcrumb';
 import viewRecentlyStorage from './localStorage';
+import DropDown from './dropDown';
 
 export default class ProductPage extends React.Component{
 	constructor(props) {
@@ -39,7 +40,7 @@ export default class ProductPage extends React.Component{
 							<div className="col-md-7">
 								<div className="single-product-content">
 									<h3>{pDetailsPrint.PName}</h3>
-									<p className="single-product-pricing"><span>Per Kg</span>{pDetailsPrint.PPrice}</p>
+									<DropDown productData={pDetailsPrint.PPrice}/>
 									<p>{pDetailsPrint.pDes}</p>
 									<div className="single-product-form">
 										<form >
