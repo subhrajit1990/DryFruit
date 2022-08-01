@@ -43,7 +43,7 @@ export default class Home extends React.Component {
 		});
 	}
 
-	const handleChangeOptions = (event) => {
+	handleChangeOptions(event) {
     	setValue(event.target.value);
   	};
 
