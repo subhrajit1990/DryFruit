@@ -26,6 +26,7 @@ export default class ProductPage extends React.Component{
 	};
 	render(){
 		const pDetailsPrint = this.state.pDetails;
+		const priceAndType = return (<DropDown productData={pDetailsPrint["PPrice"]}/>);
 		return (
 			<>
 				<Breadcrumb/>
@@ -45,7 +46,7 @@ export default class ProductPage extends React.Component{
 										<form >
 											<input type="number" placeholder="0"/>
 										</form>
-										<DropDown productData={pDetailsPrint["PPrice"]}/>
+										{priceAndType}
 										<a href="/" className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
 										<p><strong>Categories: </strong>{pDetailsPrint.PCategory}</p>
 									</div>
