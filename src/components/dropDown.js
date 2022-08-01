@@ -2,7 +2,6 @@ import * as React from 'react';
 
 const dropDown = (props) => {
   const options = props.productData;
-  console.log( "nananani nao"+JSON.stringify(options));
   const [value, setValue] = React.useState({
       optionType : "",
       optionAmt:""
