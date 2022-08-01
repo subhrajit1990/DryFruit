@@ -13,6 +13,7 @@ export default class Home extends React.Component {
 			recentProductList:[]
 		};
 		this.recentProductsListResponse = this.recentProductsListResponse.bind(this);
+		this.handleChangeOptions = this.handleChangeOptions.bind(this);
 		const [value, setValue] = React.useState('fruit');
 	}
 
@@ -91,7 +92,7 @@ export default class Home extends React.Component {
 								<div>
       								<label>
        									 What do we eat?
-        								<select value={value} onChange={handleChangeOptions}>
+        								<select value={value} onChange={this.handleChangeOptions}>
           									{viewRecentProducts["productInventory"].map((option) => (
         										<option value={option.price}>{option.variantName}</option>
           									))}
