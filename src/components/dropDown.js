@@ -22,6 +22,7 @@ const dropDown = (props) => {
       <Dropdown
         label="What do we eat?"
         options={options}
+        variantName={value.optionType}
         value={value.optionAmt}
         onChange={handleChange}
       />
@@ -30,7 +31,7 @@ const dropDown = (props) => {
   );
 };
 
-const Dropdown = ({ label, value, options, onChange }) => {
+const Dropdown = ({ label, value, variantName, options, onChange }) => {
   return (
     <label>
       {label}
